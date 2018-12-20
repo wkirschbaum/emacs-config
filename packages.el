@@ -146,10 +146,18 @@
 
 (use-package ivy
   :demand t
-  :bind ("C-x C-b" . ivy-switch-buffer) ;; this is now duplicating C-x b
+  :bind (("C-x b" . ivy-switch-buffer-without-recents)
+         ("C-x C-b" . ivy-switch-buffer-with-recents))
   :config
-  (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d/%d) ")
+  (defun ivy-switch-buffer-with-recents ()
+    (interactive)
+    (let ((ivy-use-virtual-buffers t))
+      (ivy-switch-buffer)))
+  (defun ivy-switch-buffer-without-recents ()
+    (interactive)
+    (let ((ivy-use-virtual-buffers nil))
+      (ivy-switch-buffer)))
   (ivy-mode 1))
 
 (use-package swiper
