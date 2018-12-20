@@ -126,6 +126,7 @@
 
 (use-package erc-image
   :config
+  (setq erc-image-inline-rescale 150)
   (add-to-list 'erc-modules 'image)
   (erc-update-modules))
 
@@ -144,6 +145,8 @@
   (erc :server "irc.freenode.net" :port 6667 :nick "peirama"))
 
 (use-package ivy
+  :demand t
+  :bind ("C-x C-b" . ivy-switch-buffer) ;; this is now duplicating C-x b
   :config
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d/%d) ")

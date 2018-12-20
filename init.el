@@ -42,6 +42,9 @@
 ;; undo for window
 (winner-mode)
 
+(electric-indent-mode +1)
+(electric-pair-mode 1)
+
 ;; Shortcuts
 ;; Useful shortcut when used with ivy is C-M-j when wanting to use the typed
 ;; input, not the completed input.
