@@ -1,6 +1,7 @@
 (use-package web-mode
   :mode (("\\.html?\\'" . web-mode)
          ("\\.erb\\'" . web-mode)
+         ("\\.html.eex\\'" . web-mode)
          )
   :config
   (setq web-mode-markup-indent-offset 2)
@@ -12,9 +13,12 @@
 
 ;; * Rails
 (use-package projectile-rails
-  :init
+  :config
   (projectile-rails-global-mode))
 
+(use-package counsel-projectile
+  :config
+  (counsel-projectile-mode 1))
 
 (use-package enh-ruby-mode
   :mode (("\\.rb$" . enh-ruby-mode)
@@ -24,7 +28,7 @@
          ("\\.rabl$" . enh-ruby-mode)
          ("Capfile$" . enh-ruby-mode)
          ("\\.gemspec$" . enh-ruby-mode)
-         ("\\.builder$" . enh-ruby-mode))
+         ("\\.builder$" .
   :config
   (progn
     ;; Ruby has a lot of camel case
@@ -67,3 +71,5 @@
 (use-package intero
   :config
   (intero-global-mode 1))
+
+(use-package alchemist)

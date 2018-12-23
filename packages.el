@@ -166,3 +166,5 @@
 (use-package counsel
   :config
   (counsel-mode 1))
+
+(use-package markdown-mode)

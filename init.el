@@ -39,17 +39,16 @@
 ;; Ensure finding of applicatoins from homebrew
 (add-to-list 'exec-path "/usr/local/bin/")
 
-;; undo for window
 (winner-mode)
-
 (electric-indent-mode +1)
-(electric-pair-mode 1)
+(show-paren-mode 1)
 
 ;; Shortcuts
 ;; Useful shortcut when used with ivy is C-M-j when wanting to use the typed
 ;; input, not the completed input.
 (global-set-key (kbd "C-x C-j") 'dired-jump)
 (global-set-key (kbd "M-i") 'imenu)
+;; (global-set-key (kbd "s-p") 'projectile-
 
 ;; custom file
 (setq custom-file "~/.emacs.d/custom.el")
