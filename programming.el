@@ -28,7 +28,7 @@
          ("\\.rabl$" . enh-ruby-mode)
          ("Capfile$" . enh-ruby-mode)
          ("\\.gemspec$" . enh-ruby-mode)
-         ("\\.builder$" .
+         ("\\.builder$" . enh-ruby-mode))
   :config
   (progn
     ;; Ruby has a lot of camel case

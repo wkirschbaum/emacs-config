@@ -57,8 +57,6 @@
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
 
-
-
 (load "~/.emacs.d/packages.el")
 (load "~/.emacs.d/org.el")
 (load "~/.emacs.d/programming.el")

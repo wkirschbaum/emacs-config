@@ -93,7 +93,7 @@
   :bind-keymap ("C-c p" . projectile-command-map)
   :config
   (setq projectile-enable-caching t
-        projectile-completion-system 'ivy)
+        projectile-completion-system 'helm)
   (projectile-mode +1))
 
 ;; ** Dashboard
@@ -144,27 +144,19 @@
   (interactive)
   (erc :server "irc.freenode.net" :port 6667 :nick "peirama"))
 
-(use-package ivy
-  :demand t
-  :bind (("C-x b" . ivy-switch-buffer-without-recents)
-         ("C-x C-b" . ivy-switch-buffer-with-recents))
+(use-package helm
+  :bind (("C-x C-b" . helm-mini)
+         ("M-x" . helm-M-x)
+         ("C-x C-f" . helm-find-files))
   :config
-  (setq ivy-count-format "(%d/%d) ")
-  (defun ivy-switch-buffer-with-recents ()
-    (interactive)
-    (let ((ivy-use-virtual-buffers t))
-      (ivy-switch-buffer)))
-  (defun ivy-switch-buffer-without-recents ()
-    (interactive)
-    (let ((ivy-use-virtual-buffers nil))
-      (ivy-switch-buffer)))
-  (ivy-mode 1))
+  (setq helm-mode-fuzzy-match t)
+  (setq helm-completion-in-region-fuzzy-match t)
+  (setq helm-autoresize-max-height 20)
+  (setq helm-candidate-number-limit 50)
+  (helm-mode 1))
 
-(use-package swiper
-  :bind ("C-s" . swiper))
-
-(use-package counsel
+(use-package helm-projectile
   :config
-  (counsel-mode 1))
+  (helm-projectile-on))
 
 (use-package markdown-mode)
