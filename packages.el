@@ -1,6 +1,10 @@
 ;; * Package configuration
 
-(require 'use-package)
+(package-initialize)
+
+;; This is only needed once, near the top of the file
+(eval-when-compile
+  (require 'use-package))
 
 (setq use-package-always-ensure t)
 
@@ -160,3 +164,5 @@
   (helm-projectile-on))
 
 (use-package markdown-mode)
+
+(use-package yaml-mode)

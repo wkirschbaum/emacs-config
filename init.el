@@ -60,5 +60,6 @@
 (load "~/.emacs.d/packages.el")
 (load "~/.emacs.d/org.el")
 (load "~/.emacs.d/programming.el")
+(load "~/.emacs.d/ducky.el")
 ;; Load custom must always be at the end
 (load custom-file)
